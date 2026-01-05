@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 頂部藍牙按鈕和狀態顯示 -->
+    <Button
+        android:id="@+id/btnBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="連接藍牙"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBluetoothStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="狀態: 未連線"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBluetooth" />
+
+    <!-- 新增的下拉式選單 (Spinner) -->
+    <Spinner
+        android:id="@+id/spinnerPairedDevices"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBluetoothStatus" />
+
+    <!-- 中心參考點 (L按鈕) -->
+    <Button
+        android:id="@+id/btnLeft"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="104dp"
+        android:text="L"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.685" />
+
+    <!-- 左側八方位移動按鈕 (基於L按鈕對齊) -->
+    <Button
+        android:id="@+id/btnForward"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="F"
+        app:layout_constraintBottom_toTopOf="@+id/btnLeft"
+        app:layout_constraintEnd_toEndOf="@+id/btnLeft"
+        app:layout_constraintStart_toStartOf="@+id/btnLeft" />
+
+    <Button
+        android:id="@+id/btnBackward"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="B"
+        app:layout_constraintEnd_toEndOf="@+id/btnLeft"
+        app:layout_constraintStart_toStartOf="@+id/btnLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btnLeft" />
+
+    <Button
+        android:id="@+id/btnRight"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="R"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLeft"
+        app:layout_constraintStart_toEndOf="@+id/btnLeft"
+        app:layout_constraintTop_toTopOf="@+id/btnLeft" />
+
+    <Button
+        android:id="@+id/btnForwardLeft"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Q"
+        app:layout_constraintBottom_toBottomOf="@+id/btnForward"
+        app:layout_constraintEnd_toStartOf="@+id/btnForward"
+        app:layout_constraintTop_toTopOf="@+id/btnForward" />
+
+    <Button
+        android:id="@+id/btnForwardRight"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="E"
+        app:layout_constraintBottom_toBottomOf="@+id/btnForward"
+        app:layout_constraintStart_toEndOf="@+id/btnForward"
+        app:layout_constraintTop_toTopOf="@+id/btnForward" />
+
+    <Button
+        android:id="@+id/btnBackwardLeft"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="C"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBackward"
+        app:layout_constraintEnd_toStartOf="@+id/btnBackward"
+        app:layout_constraintTop_toTopOf="@+id/btnBackward" />
+
+    <Button
+        android:id="@+id/btnBackwardRight"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Z"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBackward"
+        app:layout_constraintStart_toEndOf="@+id/btnBackward"
+        app:layout_constraintTop_toTopOf="@+id/btnBackward" />
+
+    <!-- 中心參考點 (N按鈕) -->
+    <Button
+        android:id="@+id/btnN"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="112dp"
+        android:text="N"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLeft"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnLeft"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- 右側功能按鈕 (基於N按鈕對齊) -->
+    <Button
+        android:id="@+id/btnM"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="M"
+        app:layout_constraintEnd_toEndOf="@+id/btnN"
+        app:layout_constraintStart_toStartOf="@+id/btnN"
+        app:layout_constraintTop_toBottomOf="@+id/btnN" />
+
+    <Button
+        android:id="@+id/btnRotateLeft"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="左旋(G)"
+        app:layout_constraintBottom_toTopOf="@+id/btnN"
+        app:layout_constraintEnd_toStartOf="@+id/btnN"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnN" />
+
+    <Button
+        android:id="@+id/btnRotateRight"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="右旋(H)"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRotateLeft"
+        app:layout_constraintEnd_toEndOf="@+id/btnN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnRotateLeft"
+        app:layout_constraintTop_toTopOf="@+id/btnRotateLeft"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
